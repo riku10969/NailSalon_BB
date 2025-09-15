@@ -1,43 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import styles from './Hero.module.css';
+import React, { useState, useEffect } from "react";
+import styles from "./Hero.module.css";
 
-const images = [
-  '/images/hero1.png',
-  '/images/hero2.png',
-  '/images/hero3.png',
-];
+// 画像パスと表示位置をまとめて定義
+const IMAGES = [
+  { src: "/images/hero1.png", pos: "center 20%" },
+  { src: "/images/hero2.png", pos: "center 50%" },
+  { src: "/images/hero3.png", pos: "center -20%" },
+] as const;
 
-const Hero = () => {
+export default function Hero() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
+      setCurrent((prev) => (prev + 1) % IMAGES.length);
     }, 5000); // 5秒ごとに切り替え
     return () => clearInterval(timer);
-  }, []);
+  }, []); // IMAGESは不変なので依存なしでOK
 
   return (
     <section className={styles.hero}>
-      {images.map((image, index) => (
+      {IMAGES.map((img, index) => (
         <div
-          key={index}
-          className={`${styles.slide} ${index === current ? styles.active : ''}`}
-          style={{ backgroundImage: `url(${image})` }}
+          key={img.src}
+          className={`${styles.slide} ${index === current ? styles.active : ""}`}
+          style={{
+            backgroundImage: `url(${img.src})`,
+            backgroundPosition: img.pos,
+          }}
         >
           <div className={styles.overlay}>
             <div className={styles.content}>
-               <h1 className={styles.title}>
-          指先に<span className={styles.pink}>咲く</span>、わたしだけの<span className={styles.blue}>美しさ</span>。
-        </h1>
-              {/* <h1 className={styles.title}>あなたらしさを、もっと自由に。</h1> */}
-              {/* <p className={styles.subtitle}>BBネイルサロンは、あなたの美しさを引き出します</p> */}
+              <h1 className={styles.title}>
+                指先に<span className={styles.pink}>咲く</span>、
+                わたしだけの<span className={styles.blue}>美しさ</span>。
+              </h1>
             </div>
           </div>
         </div>
       ))}
     </section>
   );
-};
-
-export default Hero;
+}

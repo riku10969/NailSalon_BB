@@ -18,7 +18,9 @@
 }
 
 .imageBox img {
-  width: 100%;
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
   max-width: 280px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);

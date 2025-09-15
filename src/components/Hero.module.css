@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  height: 100vh;
+  height: clamp(520px, 78vh, 880px); /* 100vh → 調整可能に */
   overflow: hidden;
 }
 
@@ -47,4 +47,8 @@
 
 .subtitle {
   font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .hero { height: 86vh; } /* モバイルはやや高め維持 */
 }
