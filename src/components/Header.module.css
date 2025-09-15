@@ -1,0 +1,145 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #bce6f7;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 auto;
+  gap: 40px;
+  position: relative;
+}
+
+.logo {
+  height: 48px;
+  margin-left: 0;
+}
+
+.nav {
+  display: flex;
+}
+
+.navList {
+  list-style: none; /* ← これを追加または確認 */
+  display: flex;
+  gap: 10rem;
+  padding: 0;
+  margin: 0;
+}
+
+.navList li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: #222;
+  position: relative;
+  transition: color 0.3s;
+}
+
+/* ホバー時に下線アニメーション */
+.navList li a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #222;
+  transition: width 0.3s ease;
+}
+
+.navList li a:hover::after {
+  width: 100%;
+}
+
+.en {
+  font-size: 0.8rem;
+}
+
+.jp {
+  font-size: 0.6rem;
+  color: #555;
+}
+
+.reserveBtn {
+  background-color: #f9b5c1;
+  color: white;
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s ease;
+  margin-right: 5rem;
+}
+
+.reserveBtn:hover {
+  background-color: #f78da7;
+  transform: translateY(-2px);
+}
+
+.reserveBtn .jp {
+  display: block;
+  font-size: 0.65rem;
+  margin-top: 2px;
+}
+
+.menuBtn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 3rem;
+  transform: translateY(-50%);
+  z-index: 2000;
+}
+
+/* ▼ モバイル対応 */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #bce6f7;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .open {
+    display: flex;
+  }
+
+  .navList {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .reserveBtn {
+    display: none;
+  }
+
+  .menuBtn {
+    display: block;
+  }
+}
+
+

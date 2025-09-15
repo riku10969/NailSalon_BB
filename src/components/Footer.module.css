@@ -1,0 +1,157 @@
+.footer {
+  background-color: #fcd9e1;
+  padding: 20px 10px;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 70px;
+}
+
+.nav {
+  display: flex;
+  gap: 100px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.nav li {
+  text-align: center; /* 中央揃え */
+  line-height: 0.8;   /* 高さを詰める */
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  position: relative;
+}
+
+.nav li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.nav li a:hover::after {
+  transform: scaleX(1); /* ホバー時に線が伸びる */
+}
+.en {
+  font-size: 0.9rem;
+  font-weight: bold;
+  display: block;
+}
+
+.jp {
+  font-size: 0.7rem;
+  color: #555;
+  display: block;
+  margin-top: 0.01em; /* ←これを1pxや0.5emにすると近くなる */
+}
+
+.coupon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b0dded;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  gap: 14px; /* ← ここで矢印との間隔を確保 */
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.coupon:hover {
+  background-color: #a1d2e6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.couponMain {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.couponSub {
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+.arrow {
+  font-size: 1.2rem;
+  margin-left: 4px;
+}
+.contact p {
+  margin-right: 5rem;
+  font-size: 0.75rem;
+  color: #333;
+}
+
+.credit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  color: #666;
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+}
+
+.divider {
+  color: #aaa;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+
+  .credit {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

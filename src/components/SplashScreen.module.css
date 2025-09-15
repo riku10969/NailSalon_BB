@@ -1,0 +1,90 @@
+.splash {
+  position: fixed;
+  inset: 0;
+  background-color: #9e9e9e; /* グレー背景 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+/* フェードアウト */
+.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ロゴアニメーション */
+.logo {
+  width: 400px;
+  height: 500px; /* ← サイズアップ！ */
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeInZoom 1.2s ease-out forwards;
+}
+
+@keyframes fadeInZoom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ====== ✨ 背景ふわふわ円エフェクト ====== */
+.splash::before,
+.splash::after,
+.splash::marker {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: float 8s ease-in-out infinite alternate;
+}
+
+/* 白い円（左下） */
+.splash::before {
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  left: 25%;
+  background: #ffffff;
+}
+
+/* ピンクの円（右下） */
+.splash::after {
+  width: 400px;
+  height: 400px;
+  bottom: 10%;
+  right: 20%;
+  background: #f8bbd0;
+}
+
+/* ブルーの円（左上）←★追加！ */
+/* ↓ markerをやめて .blue-circle をHTMLで書く場合に備えたCSS */
+.blueCircle {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  top: 10%;
+  left: 10%;
+  border-radius: 50%;
+  background: #bce6f7;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: float 8s ease-in-out infinite alternate;
+  animation-delay: 1s;
+}
+
+
+/* ふわっと移動 */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-30px) translateX(20px);
+  }
+}

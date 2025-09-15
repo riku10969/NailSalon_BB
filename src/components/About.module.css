@@ -1,0 +1,112 @@
+.aboutSection {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 40px;
+}
+
+.catch {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sub {
+  font-size: 60px;
+  color: #73bcd8;
+}
+
+.and {
+  font-size: 60px;
+}
+
+.highlight {
+  font-size: 60px;
+  color: #d598ac;
+}
+
+.copy {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.pink {
+  color: #d598ac;
+}
+
+.blue {
+  color: #73bcd8;
+}
+
+.decorations {
+  display: flex;
+  justify-content: center;
+  gap: 900px;
+  margin-top: -220px;
+}
+
+.decorations img {
+  height: 300px;
+}
+
+.cardRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.cardBox {
+  max-width: 320px;
+  padding: 20px;
+  background-color: #f9f7f7;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  text-align: left;
+}
+
+.cardTitle {
+  font-size: 40px;
+  font-weight: bold;
+  color: #d598ac;
+  margin-bottom: 24px;
+  margin-top: -50px;
+  text-align: center;
+}
+
+.image {
+  width: 420px;
+  height: 200px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .decorations {
+    display: none;
+  }
+
+  .sub,
+  .and,
+  .highlight {
+    font-size: 40px; /* モバイルで大見出しを少し小さく調整 */
+  }
+}

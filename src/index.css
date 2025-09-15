@@ -5,9 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:lang(en),
+h1, h2, h3, h4, h5, h6,
+.caption strong,
+.title {
+  font-family: 'Playfair Display', serif;
+}
+html {
+  scroll-behavior: smooth;
 }

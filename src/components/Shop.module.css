@@ -1,0 +1,50 @@
+.shopSection {
+  background-color: #aee4f7;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.imageWrapper img {
+  width: 100%;            /* ← 横幅いっぱいに */
+  max-width: 500px;       /* ← またはお好みで600pxなどに拡大 */
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.info {
+  text-align: left;
+  max-width: 300px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.map a {
+  color: #d66d7a;
+  text-decoration: underline;
+}
+
+.tel {
+  margin-top: 20px;
+  font-weight: bold;
+}
