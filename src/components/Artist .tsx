@@ -23,11 +23,11 @@ export default function Artist() {
             <span className={styles.icon}><FaInstagram /></span>
             Instagram：
             <a
-              href="https://www.instagram.com/ABCabc123"
+              href="https://www.instagram.com/--------"
               target="_blank"
               rel="noreferrer"
             >
-              @ABCabc123
+              @--------
             </a>
           </p>
         </div>

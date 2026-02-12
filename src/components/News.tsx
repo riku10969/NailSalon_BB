@@ -58,7 +58,7 @@ export default function News() {
       <Swiper
         modules={[Navigation]}
         navigation
-        spaceBetween={20}
+        spaceBetween={32}
         slidesPerView={1.2}
         breakpoints={{
           768: { slidesPerView: 2.5 },
@@ -67,15 +67,15 @@ export default function News() {
       >
         {visibleNews.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className={styles.card}>
-              <img src={item.image} alt="" className={styles.image} />
+            <Link to={`/news/${item.id}`} className={styles.card}>
+              <div className={styles.imageWrapper}>
+                <img src={item.image} alt="" className={styles.image} />
+                <span className={styles.dateBadge}>{item.date}</span>
+              </div>
               <span className={styles.category}>{item.category}</span>
-              <p className={styles.date}>{item.date}</p>
               <p className={styles.content}>{item.content}</p>
-              <Link to={`/news/${item.id}`} className={styles.readMore}>
-                →続きを読む
-              </Link>
-            </div>
+              <span className={styles.readMore}>続きを読む</span>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

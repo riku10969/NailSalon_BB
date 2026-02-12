@@ -1,56 +1,122 @@
 .newsSection {
-  background-color: #fff;
-  padding: 60px 20px;
+  background: linear-gradient(180deg, #f5fafb 0%, #eef6f8 100%);
+  padding: 100px 20px;
   text-align: center;
 }
 
 .title {
   font-size: 1.8rem;
   font-weight: bold;
+  color: #333;
+  margin-bottom: 4px;
 }
 
 .subtitle {
   font-size: 0.9rem;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: #666;
 }
 
+/* Swiperのカード間gap */
+.newsSection :global(.swiper-slide) {
+  padding: 0 6px;
+}
+
 .card {
-  background: #fff4f6;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-align: left;
+  display: block;
   height: 100%;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
 }
 
 .image {
   width: 100%;
-  height: 160px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.dateBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #f3c6d3;
+  color: #8b4a5a;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
 }
 
 .category {
+  display: inline-block;
   font-size: 0.75rem;
   font-weight: bold;
   color: #d66d7a;
-}
-
-.date {
-  font-size: 0.85rem;
-  color: #666;
+  margin-bottom: 6px;
 }
 
 .content {
-  margin: 8px 0;
-  font-size: 1rem;
+  margin: 0 0 12px 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
   color: #333;
 }
 
 .readMore {
   font-size: 0.9rem;
   color: #d66d7a;
-  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.readMore::after {
+  content: '→';
+  transition: transform 0.2s ease;
+}
+
+.card:hover .readMore::after {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .newsSection {
+    padding: 64px 16px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .imageWrapper {
+    height: 160px;
+    margin-bottom: 14px;
+  }
 }

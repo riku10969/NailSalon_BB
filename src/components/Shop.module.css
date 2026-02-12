@@ -1,18 +1,19 @@
 .shopSection {
-  background-color: #aee4f7;
-  padding: 50px 20px;
+  background: linear-gradient(180deg, #d8eef4 0%, #c8e8f0 100%);
+  padding: 60px 24px;
   text-align: center;
 }
 
 .title {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: bold;
-  margin-bottom: 0;
+  color: #333;
+  margin-bottom: 4px;
 }
 
 .subtitle {
-  font-size: 0.9rem;
-  margin-bottom: 40px;
+  font-size: 1rem;
+  margin-bottom: 48px;
   color: #555;
 }
 
@@ -21,30 +22,156 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  gap: 40px;
+  gap: 48px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.imageWrapper {
+  flex-shrink: 0;
 }
 
 .imageWrapper img {
-  width: 100%;            /* ← 横幅いっぱいに */
-  max-width: 500px;       /* ← またはお好みで600pxなどに拡大 */
+  width: 100%;
+  max-width: 560px;
   height: auto;
-  border-radius: 8px;
+  border-radius: 12px;
   object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .info {
   text-align: left;
-  max-width: 300px;
-  font-size: 1rem;
-  line-height: 1.7;
+  max-width: 360px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.infoCard {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 20px 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.infoLabel {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #5a9fb5;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.02em;
+}
+
+.address,
+.hours {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.access,
+.holiday {
+  display: block;
+  margin-top: 6px;
+  color: #555;
+  font-size: 0.98rem;
+}
+
+.map {
+  margin: 0 0 18px 0;
 }
 
 .map a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: #d66d7a;
-  text-decoration: underline;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.05rem;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.map a:hover {
+  background: #fff;
+  transform: translateY(-1px);
 }
 
 .tel {
-  margin-top: 20px;
+  margin: 0;
   font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.tel a {
+  color: #333;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.tel a:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .shopSection {
+    padding: 48px 16px;
+  }
+
+  .title {
+    font-size: 1.9rem;
+  }
+
+  .subtitle {
+    margin-bottom: 32px;
+  }
+
+  .content {
+    gap: 24px;
+  }
+
+  .imageWrapper {
+    max-width: 100%;
+  }
+
+  .imageWrapper img {
+    max-width: 100%;
+    max-height: 280px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .info {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .infoCard {
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+
+  .infoLabel {
+    font-size: 0.85rem;
+  }
+
+  .map a,
+  .tel a {
+    font-size: 1rem;
+  }
 }

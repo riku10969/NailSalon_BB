@@ -49,7 +49,9 @@ export default function Catalog() {
 <div className={styles.grid}>
   {catalogItems.map((item, index) => (
     <Link to={`/design/${item.slug}`} className={styles.card} key={index}>
-      {item.image && <img src={item.image} alt={item.titleEn} className={styles.image} />}
+      <div className={styles.imageWrapper}>
+        {item.image && <img src={item.image} alt={item.titleEn} className={styles.image} />}
+      </div>
       <div className={styles.caption}>
         <strong>{item.titleEn}</strong>
         <span>{item.titleJa}</span>

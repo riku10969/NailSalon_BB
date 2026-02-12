@@ -1,7 +1,50 @@
 .aboutSection {
+  position: relative;
   background-color: #fff;
-  padding: 60px 20px;
+  padding: 100px 20px;
   text-align: center;
+  overflow: hidden;
+}
+
+/* ノイズテクスチャ（バンディング軽減・奥行き感） */
+.aboutSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+.parallaxFlower {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.parallaxFlowerRight {
+  left: auto;
+  right: 0;
+  top: 82%;
+}
+
+.flowerImg {
+  display: block;
+  height: 280px;
+  width: auto;
+  opacity: 0.85;
+  object-fit: contain;
+}
+
+.intro,
+.cardsWrapper {
+  position: relative;
+  z-index: 1;
 }
 
 .title {
@@ -23,21 +66,23 @@
 }
 
 .sub {
-  font-size: 60px;
+  font-size: 68px;
   color: #73bcd8;
 }
 
 .and {
-  font-size: 60px;
+  font-size: 68px;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
 }
 
 .highlight {
-  font-size: 60px;
+  font-size: 68px;
   color: #d598ac;
 }
 
 .copy {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -61,13 +106,35 @@
   height: 300px;
 }
 
+.cardsWrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .cardRow {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 60px auto;
-  gap: 40px;
+  margin: 64px auto;
+  gap: 48px;
   flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.cardRow.visible {
+  animation: fadeInUp 0.7s ease-out forwards;
 }
 
 .reverse {
@@ -75,31 +142,56 @@
 }
 
 .cardBox {
-  max-width: 320px;
-  padding: 20px;
+  max-width: 400px;
+  min-width: 280px;
+  padding: 28px 24px;
   background-color: #f9f7f7;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
   text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.cardBox p {
+  margin: 0 0 8px 0;
+}
+
+.cardBox p:last-child {
+  margin-bottom: 0;
 }
 
 .cardTitle {
-  font-size: 40px;
+  font-size: 2.25rem;
   font-weight: bold;
   color: #d598ac;
-  margin-bottom: 24px;
-  margin-top: -50px;
+  margin-bottom: 20px;
+  margin-top: -42px;
   text-align: center;
 }
 
+.cardTitleBlue {
+  color: #73bcd8;
+}
+
 .image {
-  width: 420px;
-  height: 200px;
-  border-radius: 4px;
+  width: 520px;
+  max-width: 100%;
+  height: 280px;
+  border-radius: 8px;
   object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 @media screen and (max-width: 768px) {
+  .aboutSection {
+    padding: 88px 16px;
+  }
+
+  .parallaxFlower {
+    display: none;
+  }
+
   .decorations {
     display: none;
   }
@@ -107,6 +199,33 @@
   .sub,
   .and,
   .highlight {
-    font-size: 40px; /* モバイルで大見出しを少し小さく調整 */
+    font-size: 46px;
+  }
+
+  .cardRow {
+    flex-direction: column;
+    margin: 40px auto;
+    gap: 24px;
+  }
+
+  .cardRow.reverse {
+    flex-direction: column;
+  }
+
+  .image {
+    width: 100%;
+    height: 220px;
+    border-radius: 8px;
+  }
+
+  .cardBox {
+    max-width: 100%;
+    min-width: 0;
+    padding: 24px 20px;
+  }
+
+  .cardTitle {
+    font-size: 1.75rem;
+    margin-top: 0;
   }
 }

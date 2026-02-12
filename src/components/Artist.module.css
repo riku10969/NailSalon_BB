@@ -1,6 +1,6 @@
 .artistSection {
   padding: 60px 20px;
-  background-color: #ffffff;
+  background: linear-gradient(180deg, #eef6f8 0%, #e6f2f5 100%);
   text-align: center;
 }
 
@@ -65,5 +65,20 @@
   margin-right: 5px;
   display: inline-flex;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .artistSection {
+    padding: 48px 16px;
+  }
+
+  .container {
+    gap: 24px;
+  }
+
+  .imageWrapper img {
+    width: 100%;
+    max-width: 280px;
+  }
 }
 

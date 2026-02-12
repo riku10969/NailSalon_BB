@@ -3,9 +3,9 @@ import styles from "./Hero.module.css";
 
 // 画像パスと表示位置をまとめて定義
 const IMAGES = [
-  { src: "/images/hero1.png", pos: "center 20%" },
+  { src: "/images/hero1.png", pos: "center 35%" },
   { src: "/images/hero2.png", pos: "center 50%" },
-  { src: "/images/hero3.png", pos: "center -20%" },
+  { src: "/images/hero3.png", pos: "center 25%" },
 ] as const;
 
 export default function Hero() {

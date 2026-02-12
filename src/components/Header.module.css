@@ -139,6 +139,13 @@
 
   .menuBtn {
     display: block;
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .logo {
+    height: 40px;
   }
 }
 
