@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styles from './Header.module.css';
-import logo from '../assets/logo.svg'; // 任意のロゴ画像パスに変更
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +7,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <a href="#" className={styles.logo}>
+        <a href="/" className={styles.logo}>
           <img src="/images/logoHeader.svg" alt="BBロゴ" className={styles.logo} />
         </a>
 
