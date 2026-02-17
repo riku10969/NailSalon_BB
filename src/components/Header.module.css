@@ -7,6 +7,11 @@
   z-index: 1000;
   padding: 0.5rem 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.headerHidden {
+  transform: translateY(-100%);
 }
 
 .inner {
@@ -20,7 +25,7 @@
 }
 
 .logo {
-  height: 48px;
+  height: 64px;
   margin-left: 0;
 }
 
@@ -40,6 +45,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5em;
   text-decoration: none;
   font-weight: bold;
   color: #222;
@@ -110,42 +116,120 @@
   z-index: 2000;
 }
 
-/* ▼ モバイル対応 */
+/* デスクトップでは非表示（モバイルでカーテン内に表示） */
+.reserveBtnMobile {
+  display: none;
+}
+
+/* オーバーレイ（モバイルのみ表示） */
+.overlay {
+  display: none;
+}
+
+/* ▼ モバイル対応：右からカーテンメニュー */
 @media (max-width: 768px) {
-  .nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #bce6f7;
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem 0;
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
   }
 
-  .open {
+  .overlayOpen {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(85vw, 320px);
+    height: 100vh;
+    height: 100dvh;
+    background: linear-gradient(180deg, #bce6f7 0%, #a8dcec 100%);
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
     display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 4rem 1.5rem 2rem;
+    z-index: 1200;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+    overflow-y: auto;
+  }
+
+  .nav.open {
+    transform: translateX(0);
   }
 
   .navList {
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+  }
+
+  .navList li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .navList li a {
+    display: flex;
+    padding: 1rem 0.5rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .navList li a::after {
+    display: none;
   }
 
   .reserveBtn {
     display: none;
   }
 
+  .reserveBtnMobile {
+    display: block;
+    margin-top: 1rem;
+    background-color: #f9b5c1;
+    color: white;
+    border-radius: 30px;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .reserveBtnMobile:hover {
+    background-color: #f78da7;
+    transform: translateY(-2px);
+  }
+
+  .reserveBtnMobile .jp {
+    display: block;
+    font-size: 0.65rem;
+    margin-top: 2px;
+  }
+
   .menuBtn {
     display: block;
+    right: 1rem;
     padding: 8px;
     min-width: 44px;
     min-height: 44px;
   }
 
   .logo {
-    height: 40px;
+    height: 52px;
   }
 }
 

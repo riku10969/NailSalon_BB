@@ -19,16 +19,7 @@ export default function Artist() {
             細部までこだわり、上品で洗練された指先をご提供します。
           </p>
           <p className={styles.instagram}>
-            {/* ここが重要！ classNameをdivなどにしてテキストと分離 */}
             <span className={styles.icon}><FaInstagram /></span>
-            Instagram：
-            <a
-              href="https://www.instagram.com/--------"
-              target="_blank"
-              rel="noreferrer"
-            >
-              @--------
-            </a>
           </p>
         </div>
       </div>

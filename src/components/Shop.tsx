@@ -19,17 +19,10 @@ export default function Shop() {
               ◯◯ビル 2階<br />
               <span className={styles.access}>所沢駅から徒歩〇分</span>
             </p>
-          </div>
-
-          <p className={styles.map}>
-            <a
-              href="https://www.google.com/maps"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <span className={styles.mapLink} role="presentation">
               📍 Google Mapで見る
-            </a>
-          </p>
+            </span>
+          </div>
 
           <div className={styles.infoCard}>
             <h3 className={styles.infoLabel}>営業時間</h3>
@@ -39,9 +32,9 @@ export default function Shop() {
             </p>
           </div>
 
-          <p className={styles.tel}>
-            <a href="tel:080-1111-2222">📞 080-1111-2222</a>
-          </p>
+          <span className={styles.telLink} role="presentation">
+            📞 080-1111-2222
+          </span>
         </div>
       </div>
     </section>

@@ -1,19 +1,19 @@
 .artistSection {
-  padding: 60px 20px;
+  padding: 100px 40px;
   background: linear-gradient(180deg, #eef6f8 0%, #e6f2f5 100%);
   text-align: center;
 }
 
 .title {
-  font-size: 2.2rem;
+  font-size: 3.5rem;
   color: #333;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .subtitle {
-  font-size: 1rem;
+  font-size: 1.35rem;
   color: #777;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .container {
@@ -21,55 +21,72 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  gap: 40px;
-  max-width: 1000px;
+  gap: 64px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: left;
 }
 
 .imageWrapper img {
-  width: 300px;
+  width: 460px;
   height: auto;
-  border-radius: 8px;
+  border-radius: 12px;
   object-fit: cover;
 }
 
 .profile {
-  max-width: 500px;
+  max-width: 620px;
 }
 
 .name {
-  font-size: 1.5rem;
-  color: #7db7cc; /* 淡いブルー */
-  margin-bottom: 15px;
+  font-size: 2.25rem;
+  color: #7db7cc;
+  margin-bottom: 24px;
 }
 
 .description {
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 1.3rem;
+  line-height: 1.9;
   color: #444;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .instagram {
-  font-size: 0.95rem;
-  color: #333;
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 
 .icon {
-  font-size: 1.2rem;
-  color: #000;
-  margin-right: 5px;
+  font-size: 3.75rem;
+  color: #7db7cc;
   display: inline-flex;
   align-items: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: rgba(232, 245, 248, 0.8);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  cursor: default;
+}
+
+.icon:hover {
+  background: rgba(214, 238, 244, 0.95);
+  color: #5a9fb5;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
   .artistSection {
     padding: 48px 16px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 40px;
   }
 
   .container {
@@ -79,6 +96,24 @@
   .imageWrapper img {
     width: 100%;
     max-width: 280px;
+    border-radius: 8px;
+  }
+
+  .name {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 60px;
+  }
+
+  .icon {
+    font-size: 2.75rem;
+    padding: 6px 12px;
+    border-radius: 6px;
   }
 }
 

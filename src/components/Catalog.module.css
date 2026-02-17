@@ -1,33 +1,33 @@
 .catalogSection {
-  padding: 60px 20px;
+  padding: 100px 40px;
   background: linear-gradient(180deg, #dceff4 0%, #cce8f0 100%);
   text-align: center;
 }
 
 .title {
-  font-size: 2.2rem;
+  font-size: 3.5rem;
   color: #333;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .subtitle {
-  font-size: 1rem;
+  font-size: 1.35rem;
   color: #777;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* ← 常に3列表示 */
-  gap: 40px;
-  max-width: 1000px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 56px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .card {
   position: relative;
   background-color: #fff;
-  border-radius: 12px;
+  border-radius: 14px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   overflow: hidden;
   text-decoration: none;
@@ -36,22 +36,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 45px;
-  min-height: 320px;
+  padding-bottom: 52px;
+  min-height: 380px;
   width: 100%;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06), 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.05);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.08), 0 8px 28px rgba(0, 0, 0, 0.05);
 }
 
 .imageWrapper {
   width: 100%;
-  height: 250px;
+  height: 300px;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .image {
@@ -67,30 +67,29 @@
   transform: scale(1.05);
 }
 
-
 .caption {
-  margin-top: 20px;
+  margin-top: 24px;
   text-align: center;
 }
 
 .caption strong {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   font-weight: bold;
   font-family: 'Playfair Display', serif;
 }
 
 .caption span {
   display: block;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: #666;
 }
 
 .arrow {
   position: absolute;
-  bottom: 12px;
-  right: 18px;
-  font-size: 1.2rem;
+  bottom: 16px;
+  right: 22px;
+  font-size: 1.45rem;
   color: #f5b5c6;
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -113,8 +112,18 @@
     overflow-x: hidden;
   }
 
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
   .grid {
-    grid-template-columns: 1fr; /* モバイルは縦1列 */
+    grid-template-columns: 1fr;
     gap: 24px;
     max-width: 100%;
     margin: 0 auto;
@@ -122,9 +131,30 @@
 
   .card {
     min-height: 420px;
+    padding-bottom: 45px;
+    border-radius: 12px;
   }
 
   .imageWrapper {
     height: 300px;
+    border-radius: 12px;
+  }
+
+  .caption {
+    margin-top: 20px;
+  }
+
+  .caption strong {
+    font-size: 1.1rem;
+  }
+
+  .caption span {
+    font-size: 0.9rem;
+  }
+
+  .arrow {
+    bottom: 12px;
+    right: 18px;
+    font-size: 1.2rem;
   }
 }

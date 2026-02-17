@@ -70,6 +70,47 @@
   color: #333;
 }
 
+.infoCard .address {
+  margin-bottom: 14px;
+}
+
+.mapLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #d66d7a;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: background 0.2s, transform 0.2s;
+  cursor: default;
+  margin-top: 4px;
+}
+
+.mapLink:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.telLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: background 0.2s, transform 0.2s;
+  cursor: default;
+  margin-top: 0;
+}
+
 .access,
 .holiday {
   display: block;
@@ -78,50 +119,7 @@
   font-size: 0.98rem;
 }
 
-.map {
-  margin: 0 0 18px 0;
-}
-
-.map a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: #d66d7a;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1.05rem;
-  padding: 10px 16px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: background 0.2s, transform 0.2s;
-}
-
-.map a:hover {
-  background: #fff;
-  transform: translateY(-1px);
-}
-
-.tel {
-  margin: 0;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.tel a {
-  color: #333;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: background 0.2s, transform 0.2s;
-}
-
-.tel a:hover {
+.telLink:hover {
   background: #fff;
   transform: translateY(-1px);
 }
@@ -170,8 +168,8 @@
     font-size: 0.85rem;
   }
 
-  .map a,
-  .tel a {
+  .mapLink,
+  .telLink {
     font-size: 1rem;
   }
 }

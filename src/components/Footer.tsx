@@ -1,8 +1,9 @@
+import { FaInstagram } from 'react-icons/fa';
 import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer id="site-footer" className={styles.footer}>
       <div className={styles.inner}>
         <img src="/images/logo-footer.svg" alt="BBロゴ" className={styles.logo} />
 
@@ -49,8 +50,10 @@ export default function Footer() {
 
 
         <div className={styles.contact}>
-          <p>Instagram：@ABCabc123</p>
-          <p>TEL：080-1111-2222</p>
+          <span className={styles.contactItem} aria-label="Instagram">
+            <FaInstagram />
+          </span>
+          <span className={`${styles.contactItem} ${styles.contactItemTel}`}>TEL：080-1111-2222</span>
         </div>
       </div>
 
